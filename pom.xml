@@ -60,6 +60,12 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.0.2</version>
 		</dependency>
+
+		<!--CONTENT NEGOTIATION &#45;&#45; NEGOCIACION DE CONTENIDO-->
+		<!--<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>-->
 	</dependencies>
 
 	<build>
