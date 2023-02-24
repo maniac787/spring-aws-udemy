@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ec.com.nwi</groupId>
-	<artifactId>spring-aws</artifactId>
+	<artifactId>spring-aws-udemy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-aws</name>
 	<description>spring-aws</description>
