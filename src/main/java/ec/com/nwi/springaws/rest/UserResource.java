@@ -3,6 +3,7 @@ package ec.com.nwi.springaws.rest;
 import ec.com.nwi.springaws.domain.User;
 import ec.com.nwi.springaws.exceptions.UserNotFoundException;
 import ec.com.nwi.springaws.service.UserDaoService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +48,7 @@ public class UserResource {
 
     //POST /users
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 
         User savedUser = service.save(user);
 
