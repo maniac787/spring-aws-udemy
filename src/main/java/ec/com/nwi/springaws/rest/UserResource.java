@@ -4,6 +4,8 @@ import ec.com.nwi.springaws.domain.User;
 import ec.com.nwi.springaws.exceptions.UserNotFoundException;
 import ec.com.nwi.springaws.service.UserDaoService;
 import jakarta.validation.Valid;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +33,7 @@ public class UserResource {
     }
 
     // GET /users
-    @GetMapping("/users/{id}")
+    /*@GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable int id) {
         User user = service.findOne(id);
 
@@ -39,6 +41,21 @@ public class UserResource {
             throw new UserNotFoundException("id:" + id);
 
         return user;
+    }*/
+
+    @GetMapping("/users/{id}")
+    public EntityModel<User> retrieveUser(@PathVariable int id) {
+        User user = service.findOne(id);
+
+        if (user == null)
+            throw new UserNotFoundException("id:" + id);
+
+        EntityModel<User> entityModel = EntityModel.of(user);
+
+        WebMvcLinkBuilder link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).retrieveAllUsers());
+        entityModel.add(link.withRel("all-users"));
+
+        return entityModel;
     }
 
     @DeleteMapping("/users/{id}")

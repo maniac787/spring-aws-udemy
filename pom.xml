@@ -48,7 +48,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- PARA VALIDAR LOS PARAMETROS DEL OBJECTO-->
+		<!-- PARA VALIDAR LOS PARAMETROS DEL OBJETO-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -66,6 +66,13 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>-->
+
+		<!--HYPERMEDIA AS THE ENGINE OF APPLICATION STATE-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
