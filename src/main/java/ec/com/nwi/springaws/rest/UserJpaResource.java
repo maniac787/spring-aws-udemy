@@ -48,7 +48,7 @@ public class UserJpaResource {
     public EntityModel<User> retrieveUser(@PathVariable int id) {
         Optional<User> user = userRepository.findById(id);
 
-        if (user.isPresent())
+        if (user.isEmpty())
             throw new UserNotFoundException("id:" + id);
 
         EntityModel<User> entityModel = EntityModel.of(user.get());
